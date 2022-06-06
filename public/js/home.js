@@ -12,6 +12,8 @@ function openModal() {
 
 // closing modal
 function closeModal() {
+  habitInput.value = "";
+  goalInput.value = "";
   modal.style.display = "none";
 }
 
