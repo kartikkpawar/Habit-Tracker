@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Import Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <!-- Stying -->
+    <link rel="stylesheet" href="/css/streak.css">
+
+    <!-- JS -->
+    <script src="/js/moment.js"></script>
+    <script src="/js/streak.js" defer></script>
+</head>
+
+<body>
+    <div class="bodyContainer">
+
+        <div class="backButtonContainer">
+            <i class='bx bx-arrow-back' id="backButton" onclick="window.location.href='/'"></i>
+        </div>
+        <div class="streakHabitContainer">
+            <% habits.forEach(function(habit){%>
+                <div class="habit">
+                    <div class="nameStreakContainer">
+                        <span class="habitName">
+                            <%=habit.habit %>
+                        </span>
+                        <div class="streakTextContainer">
+                            <span class="maxStreakText">Max Streak</span>
+                            <span class="habitSreak">
+                                <%=habit.streak %> Days
+                            </span>
+                        </div>
+                    </div>
+                    <div class="streakDateContainer">
+                        <div class="dateContainer">
+                            <span class="date">04-06-2022</span>
+                            <form action="/updateHabtit?id=<%=habit._id%>&day=one&status=<%=habit.days.one%>"
+                                method="post">
+                                <button id="statusButton" class="streakStatus <%=habit.days.one %>">
+                                    <% if(habit.days.one==="DONE" ){ %>
+                                        <i class='bx bx-check'></i>
+                                        <% } %>
+                                            <% if(habit.days.one==="NOTDONE" ){ %>
+                                                <i class='bx bxs-radiation'></i>
+                                                <% } %>
+                                                    <% if(habit.days.one==="NONE" ){ %>
+                                                        <i class='bx bx-error-circle'></i>
+                                                        <% } %>
+                                                            <%=habit.days.one %>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="dateContainer">
+                            <span class="date">04-06-2022</span>
+                            <form action="/updateHabtit?id=<%=habit._id%>&day=two&status=<%=habit.days.two%>"
+                                method="post">
+                                <button id="statusButton" class="streakStatus <%=habit.days.two %>">
+                                    <% if(habit.days.two==="DONE" ){ %>
+                                        <i class='bx bx-check'></i>
+                                        <% } %>
+                                            <% if(habit.days.two==="NOTDONE" ){ %>
+                                                <i class='bx bxs-radiation'></i>
+                                                <% } %>
+                                                    <% if(habit.days.two==="NONE" ){ %>
+                                                        <i class='bx bx-error-circle'></i>
+                                                        <% } %>
+                                                            <%=habit.days.two %>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="dateContainer">
+                            <span class="date">04-06-2022</span>
+                            <form action="/updateHabtit?id=<%=habit._id%>&day=three&status=<%=habit.days.three%>"
+                                method="post">
+                                <button id="statusButton" class="streakStatus <%=habit.days.three %>">
+                                    <% if(habit.days.three==="DONE" ){ %>
+                                        <i class='bx bx-check'></i>
+                                        <% } %>
+                                            <% if(habit.days.three==="NOTDONE" ){ %>
+                                                <i class='bx bxs-radiation'></i>
+                                                <% } %>
+                                                    <% if(habit.days.three==="NONE" ){ %>
+                                                        <i class='bx bx-error-circle'></i>
+                                                        <% } %>
+                                                            <%=habit.days.three %>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="dateContainer">
+                            <span class="date">04-06-2022</span>
+                            <form action="/updateHabtit?id=<%=habit._id%>&day=four&status=<%=habit.days.four%>"
+                                method="post">
+                                <button id="statusButton" class="streakStatus <%=habit.days.four %>">
+                                    <% if(habit.days.four==="DONE" ){ %>
+                                        <i class='bx bx-check'></i>
+                                        <% } %>
+                                            <% if(habit.days.four==="NOTDONE" ){ %>
+                                                <i class='bx bxs-radiation'></i>
+                                                <% } %>
+                                                    <% if(habit.days.four==="NONE" ){ %>
+                                                        <i class='bx bx-error-circle'></i>
+                                                        <% } %>
+                                                            <%=habit.days.four %>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="dateContainer">
+                            <span class="date">04-06-2022</span>
+                            <form action="/updateHabtit?id=<%=habit._id%>&day=five&status=<%=habit.days.five%>"
+                                method="post">
+                                <button id="statusButton" class="streakStatus <%=habit.days.five %>">
+                                    <% if(habit.days.five==="DONE" ){ %>
+                                        <i class='bx bx-check'></i>
+                                        <% } %>
+                                            <% if(habit.days.five==="NOTDONE" ){ %>
+                                                <i class='bx bxs-radiation'></i>
+                                                <% } %>
+                                                    <% if(habit.days.five==="NONE" ){ %>
+                                                        <i class='bx bx-error-circle'></i>
+                                                        <% } %>
+                                                            <%=habit.days.five %>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="dateContainer">
+                            <span class="date">04-06-2022</span>
+                            <form action="/updateHabtit?id=<%=habit._id%>&day=six&status=<%=habit.days.six%>"
+                                method="post">
+                                <button id="statusButton" class="streakStatus <%=habit.days.six %>">
+                                    <% if(habit.days.six==="DONE" ){ %>
+                                        <i class='bx bx-check'></i>
+                                        <% } %>
+                                            <% if(habit.days.six==="NOTDONE" ){ %>
+                                                <i class='bx bxs-radiation'></i>
+                                                <% } %>
+                                                    <% if(habit.days.six==="NONE" ){ %>
+                                                        <i class='bx bx-error-circle'></i>
+                                                        <% } %>
+                                                            <%=habit.days.six %>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="dateContainer">
+                            <span class="date">04-06-2022</span>
+                            <form action="/updateHabtit?id=<%=habit._id%>&day=seven&status=<%=habit.days.seven%>"
+                                method="post">
+                                <button id="statusButton" class="streakStatus <%=habit.days.seven %>">
+                                    <% if(habit.days.seven==="DONE" ){ %>
+                                        <i class='bx bx-check'></i>
+                                        <% } %>
+                                            <% if(habit.days.seven==="NOTDONE" ){ %>
+                                                <i class='bx bxs-radiation'></i>
+                                                <% } %>
+                                                    <% if(habit.days.seven==="NONE" ){ %>
+                                                        <i class='bx bx-error-circle'></i>
+                                                        <% } %>
+                                                            <%=habit.days.seven %>
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <% }); %>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

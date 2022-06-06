@@ -1,0 +1,112 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --voilet: #5a20cb;
+  --green: #4dd637;
+  --red: #d82e2f;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bodyContainer {
+  width: 98%;
+  max-width: 1600px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.homeButton {
+  border: none;
+  background-color: var(--voilet);
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+}
+.homeButton:hover {
+  cursor: pointer;
+}
+#streakButton {
+  background-color: var(--green);
+}
+
+#habitContainer {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+}
+.habit {
+  display: flex;
+  width: 60%;
+  padding: 5px;
+  border-radius: 10px;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  margin-top: 10px;
+}
+.habitInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 0.8;
+}
+.habitName {
+  font-size: 30px;
+}
+.habitGoal {
+  font-size: 20px;
+}
+.habitButtonsStatus {
+  flex: 0.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.status {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.habitButtons {
+  display: flex;
+  margin-top: 5px;
+}
+.habitButton {
+  border: none;
+
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+.habitButton:hover {
+  cursor: pointer;
+}
+.NOTDONE {
+  background-color: #ddd101;
+}
+.DONE {
+  background-color: #5a20cb;
+}
+.NONE {
+  background-color: #000000;
+}
+#removeButton {
+  background-color: var(--red);
+}

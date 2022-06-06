@@ -1,0 +1,124 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --voilet: #5a20cb;
+  --green: #4dd637;
+  --red: #d82e2f;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bodyContainer {
+  width: 98%;
+  max-width: 1600px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.backButtonContainer {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30px;
+  width: 100%;
+}
+#backButton {
+  margin-left: 20px;
+  aspect-ratio: 1/1;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.streakHabitContainer {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.habit {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 5px;
+  border-radius: 10px;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  margin: 15px 0;
+  user-select: none;
+}
+.nameStreakContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.habitName {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--voilet);
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.streakTextContainer {
+  max-width: 30%;
+}
+.maxStreakText {
+  margin-right: 5px;
+  font-weight: 600;
+}
+.habitSreak {
+  font-weight: 800;
+  color: var(--green);
+  font-size: 22px;
+  margin-right: 10px;
+}
+.streakDateContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.dateContainer {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+.date {
+  font-size: 15px;
+  font-weight: 600;
+}
+.streakStatus {
+  margin-top: 5px;
+  width: max-content;
+  padding: 5px 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+.NOTDONE {
+  background-color: #ddd101;
+  opacity: 0.9;
+}
+.DONE {
+  background-color: #5a20cb;
+  opacity: 0.9;
+}
+.NONE {
+  background-color: #000000;
+  opacity: 0.9;
+}

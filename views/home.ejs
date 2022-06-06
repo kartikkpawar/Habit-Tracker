@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Import Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <!-- Stying -->
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/modal.css">
+
+    <!-- JS -->
+    <script src="/js/home.js" defer></script>
+</head>
+
+<body>
+    <div class="bodyContainer">
+        <div class="buttonContainer">
+            <button class="homeButton" id="addButton" onclick="openModal()"><i class='bx bx-plus'></i>Add habit</button>
+            <button class="homeButton" id="streakButton" onclick="location.href='/streak';"><i
+                    class='bx bx-check'></i>Streak</button>
+        </div>
+        <div id="habitContainer">
+            <% habits.forEach(function(habit){%>
+                <div class="habit">
+                    <div class="habitInfo">
+                        <span class="habitName">
+                            <%= habit.habit%>
+                        </span>
+                        <span class="habitGoal">
+                            <%= habit.goal%>
+                        </span>
+                    </div>
+                    <div class="habitButtonsStatus">
+                        <span class="status">
+                            <%=habit.days.one %>
+                        </span>
+                        <div class="habitButtons">
+                            <form action="/updateHabtit?id=<%=habit._id%>&day=one&status=<%=habit.days.one%>"
+                                method="post">
+                                <button id="statusButton" class="habitButton <%=habit.days.one %>">
+                                    <% if(habit.days.one==="DONE" ){ %>
+                                        <i class='bx bx-check'></i>
+                                        <% } %>
+                                            <% if(habit.days.one==="NOTDONE" ){ %>
+                                                <i class='bx bxs-radiation'></i>
+                                                <% } %>
+                                                    <% if(habit.days.one==="NONE" ){ %>
+                                                        <i class='bx bx-error-circle'></i>
+                                                        <% } %>
+                                                            <%=habit.days.one %>
+                                </button>
+                            </form>
+                            <form action="/deleteHabit/<%=habit._id%>" method="post">
+                                <button id="removeButton" class="habitButton"><i class='bx bx-trash'></i>
+                                    Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+    <div class="modalContainer" id="modalContainer">
+        <div class="modal">
+            <span class="headingText">ADD HABIT</span>
+            <div class="input-group">
+                <input type="text" id="habitInput" required class="input">
+                <label for="name" class="input-label">Title</label>
+            </div>
+            <div class="input-group">
+                <input type="text" id="goalInput" required class="input">
+                <label for="name" class="input-label">Goal</label>
+            </div>
+            <div class="modalButtonContainer">
+                <button class="modalButton discardButton" id="discardButton" onclick="closeModal()">DISCARD</button>
+                <button class="modalButton saveButton" id="saveButton">SAVE</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
